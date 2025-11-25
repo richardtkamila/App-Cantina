@@ -1,5 +1,6 @@
 import { View, Text,TouchableOpacity, StyleSheet, TextInput,} from "react-native";
 import { useState } from "react";
+
 export default  function LoginTeste({ navigation }) {
   const [senha, setSenha]= useState()
     const [senhaIncorreta, setSenhaIncorreta] = useState(false)
@@ -8,7 +9,7 @@ export default  function LoginTeste({ navigation }) {
       setSenhaIncorreta(true)
       return;
     } else {
-      navigation.navigate("home")
+      navigation.navigate("tab")
     }
   }
 

@@ -23,11 +23,12 @@ useEffect(() => {
   }, []);
 
   const CarregarProdutos = ({item}) =>  (
+    <View style={{ flex: 1, alignItems: "center" }}>
     <TouchableOpacity
         style={[ styles.produtoItem, {
          backgroundColor: '#5d10b0',
           margin: margin,
-          width: itemWidth,
+          width: 200,
           borderColor: "black",
     }, ]}
     /*onPress={() => {
@@ -52,6 +53,7 @@ useEffect(() => {
         </Text>
       </View>
     </TouchableOpacity>
+    </View>
   )
  return (
  <View style={{flex: 1, backgroundColor: '#efe9fa'}}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -22,18 +22,11 @@ export default function Login() {
       Alert.alert('Erro', 'Preencha todos os campos.');
       return;
     }
-
-    if (!validaEmail(email)) {
-      Alert.alert('Erro', 'Digite um e-mail válido.');
-      return;
+    else {
+      Alert.alert('Cadastro Realizado', `Nome: ${nome}\nEmail: ${email}\nSenha: ${senha}`);
+      navigation.navigate("drawer")
     }
 
-    if (!validaSenha(senha)) {
-      Alert.alert('Erro', 'A senha deve ter no mínimo 6 caracteres.');
-      return;
-    }
-
-    Alert.alert('Cadastro Realizado', `Nome: ${nome}\nEmail: ${email}\nSenha: ${senha}`);
   };
 
   return (
@@ -41,7 +34,7 @@ export default function Login() {
       <Text style={styles.label}>Nome:</Text>
       <TextInput
         style={styles.input}
-        // texto que aparece na caixa e depois some "digite seeu nome" 
+        // texto que aparece na caixa e depois some "digite seu nome" 
         placeholder="Digite seu nome"
         value={nome}
         onChangeText={setNome}

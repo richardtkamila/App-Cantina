@@ -2,11 +2,11 @@ import { View, Text, } from "react-native"
 
 
 
-export default  function   Perfil() {
+export default  function   Sobre() {
     return (
         <View>
             <Text>
-                Perfil
+                Sobre
             </Text>
         </View>
     )
